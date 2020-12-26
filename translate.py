@@ -24,7 +24,7 @@ for x in f.readlines():
         count+=1
 print("There are",count,"words in the replacement list which are in the dictionary")
 print()      
-
+f.close()
 f=open("t8.shakespeare.txt","r")
 
 
@@ -46,13 +46,13 @@ print()
 
 
 for i in dict.keys():
-    text.replace(i,dict[i])
-    text.replace(i.upper(),dict[i].upper())
-    text.replace(i[0].upper()+i[1:],dict[i][0].upper()+dict[i][1:])
+    text=text.replace(i,dict[i])
+    text=text.replace(i.upper(),dict[i].upper())
+    text=text.replace(i[0].upper()+i[1:],dict[i][0].upper()+dict[i][1:])
     
         
 
-file1=open("Translated.txt","a")
+file1=open("Translated.txt","w")
 file1.write(text)
 file1.close()
 
